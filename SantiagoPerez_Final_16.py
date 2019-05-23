@@ -7,13 +7,14 @@ barcposx=[4,10,12,80,50,40]
 def velocidad(xf,tf):
     velo= (xf)/(tf)
     return float(velo)
+iteraciones =100
+paso=10
 def Metropolis(iteraciones,paso):
     
 	VELOCIDADES=np.zeros(iteraciones)
 	VELOCIDADES[0]=np.random.random()
-	for i in range(iteraciones-1):
-       
-        fa=velocidad(barcposx[j],barctiempos[j])
+    for i in range(iteraciones-1):
+        fa=velocidad(barcposx[0],barctiempos[0])
         propuesta = fa+np.random.normal()*paso
         ratio=propuesta/fa
         rr=np.random.uniform()
